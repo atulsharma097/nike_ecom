@@ -1,6 +1,13 @@
 import {hamburger} from '../assets/icons';
 import {logopng} from '../assets/images';
-import { navlink } from "../constants";
+
+const navlink = [
+    { href: "#home", lablel: "Home" },
+    { href: "#about-us", lablel: "About" },
+    { href: "#Products", lablel: "Products" },
+    { href: "#Contact-us", lablel: "Contact us" },
+
+];
 
 
 const Nav = () => {
