@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {  shoe4, shoe5, shoe6, } from "../assets/images"
 import { useParams } from "react-router-dom";
-// import { Products } from "../constants";
 import Button from "../Components/Button";
 import PopularProductCard from "../Components/PopularProductCard";
 
