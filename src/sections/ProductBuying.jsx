@@ -1,11 +1,48 @@
 import React, { useState, useEffect } from "react";
+import {  shoe4, shoe5, shoe6, } from "../assets/images"
 import { useParams } from "react-router-dom";
-import { Products } from "../constants";
+// import { Products } from "../constants";
 import Button from "../Components/Button";
 import PopularProductCard from "../Components/PopularProductCard";
 
+ const Products = [
+    {
+        id: '1',
+        imgURL: shoe4,
+        name: "Nike Air Jordan-01",
+        price: "$200.20",
+        description: "tep up you gam with Nike Air Jordan-01. Renowned for its iconic design and premium craftsmanship, this shoe offers unmatched comfort and style. With its sleek silhouette and high-quality materials, it’s a must-have for sneaker enthusiasts and fashion-forward individuals alike. Perfect for both on-court performance and off-court street style. "
+    },
+    {
+        id: '2',
+        imgURL: shoe5,
+        name: "stylish casual sneaker",
+        price: '$30.20',
+        description: "Add a touch of modern flair to your wardrobe with the Stylish Casual Sneaker. This versatile shoe is designed for everyday wear, combining a trendy look with all-day comfort. Its lightweight construction and fashionable design make it the ideal choice for casual outings or laid-back activities"
+
+    },
+    {
+        id: '3',
+        imgURL: shoe6,
+        name: "Nike Air Huaracha",
+        price: '$102.31',
+        description: "Discover the ultimate in comfort and support with the Nike Air Huarache. Known for its innovative design and exceptional cushioning, this sneaker offers a snug, flexible fit that adapts to your movements. Whether you’re hitting the gym or running errands, the Air Huarache delivers both style and performance."
+
+    },
+    {
+
+        id: '4',
+        imgURL: shoe4,
+        name: "J-Crew New Balance",
+        price: "$5.30",
+        description: "Embrace effortless style with the J-crew New Balance sneaker. This budget-friendly option doesn’t compromise on quality, featuring a classic design and comfortable fit. Ideal for casual wear, it adds a touch of sophistication to any outfit without breaking the bank"
+
+    }
+];
+
 const ProductBuying = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [_loading, setLoading] = useState(true);
   
   useEffect(() => {
     // Simulate a data fetching process
