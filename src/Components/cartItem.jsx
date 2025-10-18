@@ -1,5 +1,5 @@
 import React from "react";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext.jsx";
 import { Trash2, Heart } from "lucide-react"; // ✅ icons for remove/fav
 
 const CartItem = ({ item }) => {
