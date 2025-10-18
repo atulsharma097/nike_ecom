@@ -7,7 +7,7 @@ export const navlink = [
     { href: "#home", lablel: "Home" },
     { href: "#about-us", lablel: "About" },
     { href: "#Products", lablel: "Products" },
-    { href: "#Contact-us", lablel: "Contact us" },
+    { href: "#contact-us", lablel: "Contact-us" }, 
 
 ];
 

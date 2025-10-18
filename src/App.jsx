@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { CustomerReview, Footer, Hero, PopularProducts, Service, SpecialOffers, Subscribe, SuperQuality } from "./sections";
 import Nav from "./Components/Nav";
 import Loading from './Components/Loading';
 import ProductBuying from './sections/ProductBuying';
 import './index.css';
+import CartPage from './assets/pages/CartPage';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); 
-
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -23,7 +22,7 @@ const App = () => {
       {loading ? (
         <Loading />
       ) : (
-        <Router>
+        <>
           <Nav className="opacity-0 animate-blurIn delay-150" />
           <Routes>
             <Route path="/" element={
@@ -55,8 +54,9 @@ const App = () => {
               </main>
             } />
             <Route path="/product/:productId" element={<ProductBuying />} />
+            <Route path="/cart" element={<CartPage />} />
           </Routes>
-        </Router>
+        </>
       )}
     </div>
   );

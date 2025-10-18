@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import {  shoe4, shoe5, shoe6, } from "../assets/images"
 import { useParams } from "react-router-dom";
 import Button from "../Components/Button";
+import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 import PopularProductCard from "../Components/PopularProductCard";
 
  const Products = [
@@ -66,6 +68,10 @@ const ProductBuying = () => {
 
   const { productId } = useParams();
   const product = Products.find((prod) => prod.id === productId);
+  // Hooks must be called at the top level of the component
+  const cartContext = useCart();
+  const addToCart = cartContext?.addToCart;
+  const navigate = useNavigate();
 
   const [cursorPos, setCursorPos] = useState({ x: "50%", y: "50%" });
 
@@ -123,7 +129,13 @@ const ProductBuying = () => {
                 </span>
               </div>
               <div className="mt-6 flex flex-col md:flex-row gap-4">
-                <Button label="Add to Cart" />
+                <Button
+                  label="Add to Cart"
+                  onClick={() => {
+                    addToCart && addToCart(product);
+                    navigate && navigate('/cart');
+                  }}
+                />
                 <Button label="Buy Now" />
               </div>
               <div className="mt-20 justify-items-center gap-6">

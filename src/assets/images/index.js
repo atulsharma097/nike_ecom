@@ -6,6 +6,7 @@ import customer1 from './customer1.jpg';
 import customer2 from './customer2.jpg';
 
 import logopng from './logopng.png';
+import cartIcon from './CartIcon.png';
 import footerlogo from './footer-logo.svg'; 
 
 import offer from './offer.svg'; 
@@ -33,6 +34,7 @@ export {
   
   footerlogo,
   logopng,
+  cartIcon,
 
   offer,
   shoe4,
