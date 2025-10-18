@@ -1,7 +1,6 @@
 import React from "react";
 import { useCart } from "../../context/CartContext";
-import CartItem from "../../Components/CartItem";
-
+import CartItem from "../../Components/CartItem.jsx";  // ✅
 const CartPage = () => {
   const { cart, total, clearCart } = useCart(); 
 
@@ -68,5 +67,5 @@ const CartPage = () => {
 };
 
 export default CartPage;
-export { CartItem };
+
  
